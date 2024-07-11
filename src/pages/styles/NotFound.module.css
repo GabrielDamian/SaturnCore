@@ -1,0 +1,26 @@
+.container
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/NotFound_bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.core
+{
+    color: var(--colors-accent_2);
+    text-align: center;
+}
+.core h1
+{
+    font-family: var(--fonts-headings);
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+.core p 
+{
+    font-family: var(--fonts-body);
+    font-size: 1.4rem;
+}
