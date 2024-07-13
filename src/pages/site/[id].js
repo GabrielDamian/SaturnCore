@@ -28,6 +28,7 @@ export default function Sites() {
       let res = await axios.post("/api/site", {
         ...sanitizeObject,
       });
+
       window.location.reload();
     } catch (err) {
       window.alert("Error update field!");
