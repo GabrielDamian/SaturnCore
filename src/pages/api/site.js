@@ -45,10 +45,36 @@ export default async function handler(req, res) {
       try {
         const { index } = req.body;
 
-        const img = "default";
-        const text = "default";
+        const default_fields = {
+          // general
+          website_name: "String", //! important
+          address: "String",
+          phone_number: "String",
+          email: "String",
 
-        const site = new Site({ index, img: img, text: text });
+          // Section 1
+          hero_img: "String", //horizontal
+          hero_text: "String",
+
+          // Section 2
+          section_2_img_1: "String", //vertical
+          section_2_img_2: "String", //vertical
+
+          // Section 3
+          room_1_name: "String",
+          room_1_img: "String", //vertical
+
+          room_2_name: "String",
+          room_2_img: "String", //vertical
+
+          room_3_name: "String",
+          room_3_img: "String", //vertical
+
+          // Section 5
+          parallax_bg_img: "String", //horizontal
+        };
+
+        const site = new Site({ index, ...default_fields });
         await site.save();
         res.status(201).json({ success: true, data: site });
       } catch (error) {
