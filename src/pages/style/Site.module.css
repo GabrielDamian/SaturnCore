@@ -1,0 +1,22 @@
+.container
+{
+    border: 2px solid blue;
+    min-height: 80vh;
+    padding: 20px;
+}
+.row
+{
+    border: 1px solid magenta;
+    display: flex;
+    margin-bottom: 10px;
+}
+.row p 
+{
+    width: 40px;
+    font-weight: bold;
+}
+.row input 
+{
+    width: 100%;
+    padding: 5px;
+}
