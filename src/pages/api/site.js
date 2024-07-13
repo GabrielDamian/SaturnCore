@@ -1,9 +1,28 @@
 import dbConnect from "../../lib/mongodb";
 import Site from "../../models/Sites";
+import Cors from "cors";
+
+const cors = Cors({
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  origin: "*",
+});
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 export default async function handler(req, res) {
   const { method, query } = req;
   const { id } = query;
+
+  await runMiddleware(req, res, cors);
 
   await dbConnect();
 
