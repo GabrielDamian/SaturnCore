@@ -66,12 +66,20 @@ export default function Add() {
         <div key={site._id}>
           <a href={`/site/${site.index}`}>Index: {site.index}</a>
           <button
+            style={{ marginLeft: "20px" }}
             onClick={() => {
               deleteItem(site.index);
             }}
           >
             Delete
           </button>
+          <a
+            target="_blank"
+            style={{ marginLeft: "20px" }}
+            href={`https://magnus-${site.index}-magic.netlify.app/`}
+          >
+            LINK
+          </a>
         </div>
       ))}
     </div>
